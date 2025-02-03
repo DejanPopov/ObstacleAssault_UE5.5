@@ -32,7 +32,13 @@ void AMovingPlatform::Tick(float DeltaTime)
 	SetActorLocation(CurrentLocation);
 
 	// Find the distance between start location and current location
-	DistancePassed = FVector::Distance(StartLocation, CurrentLocation);
-}
+	float DistancePassed = FVector::Distance(StartLocation, CurrentLocation);
 
-  
+	// IF distance passed is greater than 100 than change direction by -PlatformVelocity
+	if (DistancePassed > MoveDistance)
+	{
+		PlatformVelocity = -PlatformVelocity;
+		StartLocation    = CurrentLocation;
+	}
+	
+}
