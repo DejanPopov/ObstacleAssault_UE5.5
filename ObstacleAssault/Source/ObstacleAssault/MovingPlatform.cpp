@@ -25,7 +25,9 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 	// Get CURRENT actor LOCATION
 	FVector CurrentLocation = GetActorLocation();
-	CurrentLocation.X = CurrentLocation.X + 1;
+	/* NO matter for much PC can render a FRAME, multiply it by DELTATIME 
+	and is same speed of moving platform on slow and fast PC's */
+	CurrentLocation = CurrentLocation + (PlatformVelocity * DeltaTime);
 	SetActorLocation(CurrentLocation);
 }
 
