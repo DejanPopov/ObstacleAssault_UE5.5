@@ -10,7 +10,6 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 void EmptyLinkFunctionForGeneratedCodeMovingPlatform() {}
 
 // Begin Cross Module References
-COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 ENGINE_API UClass* Z_Construct_UClass_AActor();
 OBSTACLEASSAULT_API UClass* Z_Construct_UClass_AMovingPlatform();
 OBSTACLEASSAULT_API UClass* Z_Construct_UClass_AMovingPlatform_NoRegister();
@@ -33,30 +32,13 @@ struct Z_Construct_UClass_AMovingPlatform_Statics
 		{ "IncludePath", "MovingPlatform.h" },
 		{ "ModuleRelativePath", "MovingPlatform.h" },
 	};
-	static constexpr UECodeGen_Private::FMetaDataPairParam NewProp_MyVector_MetaData[] = {
-		{ "Category", "MovingPlatform" },
-#if !UE_BUILD_SHIPPING
-		{ "Comment", "// Copied Player LOCATION to this variable so its spawns at player location\n" },
-#endif
-		{ "ModuleRelativePath", "MovingPlatform.h" },
-#if !UE_BUILD_SHIPPING
-		{ "ToolTip", "Copied Player LOCATION to this variable so its spawns at player location" },
-#endif
-	};
 #endif // WITH_METADATA
-	static const UECodeGen_Private::FStructPropertyParams NewProp_MyVector;
-	static const UECodeGen_Private::FPropertyParamsBase* const PropPointers[];
 	static UObject* (*const DependentSingletons[])();
 	static constexpr FCppClassTypeInfoStatic StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<AMovingPlatform>::IsAbstract,
 	};
 	static const UECodeGen_Private::FClassParams ClassParams;
 };
-const UECodeGen_Private::FStructPropertyParams Z_Construct_UClass_AMovingPlatform_Statics::NewProp_MyVector = { "MyVector", nullptr, (EPropertyFlags)0x0020080000000001, UECodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(AMovingPlatform, MyVector), Z_Construct_UScriptStruct_FVector, METADATA_PARAMS(UE_ARRAY_COUNT(NewProp_MyVector_MetaData), NewProp_MyVector_MetaData) };
-const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_AMovingPlatform_Statics::PropPointers[] = {
-	(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_AMovingPlatform_Statics::NewProp_MyVector,
-};
-static_assert(UE_ARRAY_COUNT(Z_Construct_UClass_AMovingPlatform_Statics::PropPointers) < 2048);
 UObject* (*const Z_Construct_UClass_AMovingPlatform_Statics::DependentSingletons[])() = {
 	(UObject* (*)())Z_Construct_UClass_AActor,
 	(UObject* (*)())Z_Construct_UPackage__Script_ObstacleAssault,
@@ -68,11 +50,11 @@ const UECodeGen_Private::FClassParams Z_Construct_UClass_AMovingPlatform_Statics
 	&StaticCppClassTypeInfo,
 	DependentSingletons,
 	nullptr,
-	Z_Construct_UClass_AMovingPlatform_Statics::PropPointers,
+	nullptr,
 	nullptr,
 	UE_ARRAY_COUNT(DependentSingletons),
 	0,
-	UE_ARRAY_COUNT(Z_Construct_UClass_AMovingPlatform_Statics::PropPointers),
+	0,
 	0,
 	0x009000A4u,
 	METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UClass_AMovingPlatform_Statics::Class_MetaDataParams), Z_Construct_UClass_AMovingPlatform_Statics::Class_MetaDataParams)
@@ -97,10 +79,10 @@ AMovingPlatform::~AMovingPlatform() {}
 struct Z_CompiledInDeferFile_FID_UE_Projects_ObstacleAssault_UE5_5_ObstacleAssault_Source_ObstacleAssault_MovingPlatform_h_Statics
 {
 	static constexpr FClassRegisterCompiledInInfo ClassInfo[] = {
-		{ Z_Construct_UClass_AMovingPlatform, AMovingPlatform::StaticClass, TEXT("AMovingPlatform"), &Z_Registration_Info_UClass_AMovingPlatform, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingPlatform), 2892132976U) },
+		{ Z_Construct_UClass_AMovingPlatform, AMovingPlatform::StaticClass, TEXT("AMovingPlatform"), &Z_Registration_Info_UClass_AMovingPlatform, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(AMovingPlatform), 2655419407U) },
 	};
 };
-static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_ObstacleAssault_UE5_5_ObstacleAssault_Source_ObstacleAssault_MovingPlatform_h_3689736411(TEXT("/Script/ObstacleAssault"),
+static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_UE_Projects_ObstacleAssault_UE5_5_ObstacleAssault_Source_ObstacleAssault_MovingPlatform_h_4275612190(TEXT("/Script/ObstacleAssault"),
 	Z_CompiledInDeferFile_FID_UE_Projects_ObstacleAssault_UE5_5_ObstacleAssault_Source_ObstacleAssault_MovingPlatform_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_UE_Projects_ObstacleAssault_UE5_5_ObstacleAssault_Source_ObstacleAssault_MovingPlatform_h_Statics::ClassInfo),
 	nullptr, 0,
 	nullptr, 0);

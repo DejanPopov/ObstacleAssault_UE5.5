@@ -19,10 +19,6 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-	UPROPERTY(EditAnywhere)
-	// Copied Player LOCATION to this variable so its spawns at player location
-	FVector MyVector = FVector(1,2,3); 
-
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
