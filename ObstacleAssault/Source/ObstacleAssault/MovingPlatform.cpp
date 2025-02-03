@@ -16,6 +16,7 @@ void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
 
+	StartLocation = GetActorLocation();
 }
 
 // Called every frame
@@ -29,6 +30,9 @@ void AMovingPlatform::Tick(float DeltaTime)
 	and is same speed of moving platform on slow and fast PC's */
 	CurrentLocation = CurrentLocation + (PlatformVelocity * DeltaTime);
 	SetActorLocation(CurrentLocation);
+
+	// Find the distance between start location and current location
+	DistancePassed = FVector::Distance(StartLocation, CurrentLocation);
 }
 
   

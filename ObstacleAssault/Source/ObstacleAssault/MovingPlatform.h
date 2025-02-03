@@ -25,5 +25,11 @@ public:
 
 	UPROPERTY(EditAnywhere, Category="Moving Platform")
 	FVector PlatformVelocity = FVector(100, 0, 0);
+	UPROPERTY(VisibleAnywhere, Category="Moving PLatform") // VisibleAnywhere => CANT edit, only seeable;
+	float DistancePassed;
+	
+	FVector StartLocation;
+
+
 
 };
