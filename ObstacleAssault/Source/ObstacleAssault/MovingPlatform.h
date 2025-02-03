@@ -20,7 +20,8 @@ protected:
 	virtual void BeginPlay() override;
 
 	UPROPERTY(EditAnywhere)
-	FVector MyVector = FVector(1,2,3);
+	// Copied Player LOCATION to this variable so its spawns at player location
+	FVector MyVector = FVector(1,2,3); 
 
 public:	
 	// Called every frame
