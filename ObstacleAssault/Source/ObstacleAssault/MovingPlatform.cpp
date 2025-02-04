@@ -37,8 +37,10 @@ void AMovingPlatform::Tick(float DeltaTime)
 	// IF distance passed is greater than 100 than change direction by -PlatformVelocity
 	if (DistancePassed > MoveDistance)
 	{
+		FVector MoveDirection = PlatformVelocity.GetSafeNormal();
+		StartLocation    = StartLocation + (MoveDirection * MoveDistance);
+		SetActorLocation(StartLocation);
 		PlatformVelocity = -PlatformVelocity;
-		StartLocation    = CurrentLocation;
 	}
 	
 }
