@@ -36,9 +36,10 @@ void AMovingPlatform::Tick(float DeltaTime)
 
 	// IF distance passed is greater than 100 than change direction by -PlatformVelocity
 	if (DistancePassed > MoveDistance)
-	{
+	{	
+		FString ActorName = GetName();
 		float OverShoot = DistancePassed - MoveDistance;
-		UE_LOG(LogTemp, Display, TEXT("Platform overshoot by %f"), OverShoot);
+		UE_LOG(LogTemp, Display, TEXT("%s Platform overshoot by %f"), *ActorName, OverShoot);
 		FVector MoveDirection = PlatformVelocity.GetSafeNormal();
 		StartLocation    = StartLocation + (MoveDirection * MoveDistance);
 		SetActorLocation(StartLocation);
