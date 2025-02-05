@@ -8,14 +8,12 @@ AMovingPlatform::AMovingPlatform()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
-
 }
 
 // Called when the game starts or when spawned
 void AMovingPlatform::BeginPlay()
 {
 	Super::BeginPlay();
-
 	StartLocation = GetActorLocation();
 }
 
@@ -23,18 +21,17 @@ void AMovingPlatform::BeginPlay()
 void AMovingPlatform::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
+	MovePlatform(DeltaTime);
+	RotatePlatform(DeltaTime);
+}
 
-	// Get CURRENT actor LOCATION
+void AMovingPlatform::MovePlatform(float DeltaTime)
+{
 	FVector CurrentLocation = GetActorLocation();
-	/* NO matter for much PC can render a FRAME, multiply it by DELTATIME 
-	and is same speed of moving platform on slow and fast PC's */
 	CurrentLocation = CurrentLocation + (PlatformVelocity * DeltaTime);
 	SetActorLocation(CurrentLocation);
-
-	// Find the distance between start location and current location
 	float DistancePassed = FVector::Distance(StartLocation, CurrentLocation);
 
-	// IF distance passed is greater than 100 than change direction by -PlatformVelocity
 	if (DistancePassed > MoveDistance)
 	{	
 		FString ActorName = GetName();
@@ -45,5 +42,9 @@ void AMovingPlatform::Tick(float DeltaTime)
 		SetActorLocation(StartLocation);
 		PlatformVelocity = -PlatformVelocity;
 	}
-	
+}
+
+void AMovingPlatform::RotatePlatform(float DeltaTime)
+{
+	UE_LOG(LogTemp, Display, TEXT("%s Rotating..."), *GetName());
 }
